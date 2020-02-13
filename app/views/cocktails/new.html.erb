@@ -1,0 +1,11 @@
+<h1>New cocktail</h1>
+
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>
+
+<hr>
+<%= link_to new_cocktail_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
