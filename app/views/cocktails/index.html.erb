@@ -1,19 +1,5 @@
-<h1>Cocktails</h1>
-
-<ul id="cocktails">
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-    </li>
-  <% end %>
-</ul>
-
-<hr>
-
-<!-- app/views/articles/index.html.erb -->
-<%= cl_image_tag("j9ro3achfzmnx54xw5me",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("gz0hofqv7zbxqb2fqlev",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<h1>1000 ways to be drunk</h1>
+<% @cocktails.each do |cocktail| %>
+  <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+<% end %>
+<%= link_to 'Add cocktail', new_cocktail_path %>

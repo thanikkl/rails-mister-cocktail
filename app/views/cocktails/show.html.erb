@@ -1,7 +1,10 @@
-<h1><%= @cocktail.name %></h1>
-
-
-<hr>
-<%= link_to cocktail_path do %>
-  <i class="fa fa-history"></i> Back to list
-<% end %>
+<h1>Cocktails</h1>
+<p>
+  <% @cocktail.doses.each do |d| %>
+    <%= d.ingredient.name %>
+    <%= d.description %>
+    <%= link_to "Delete", dose_path(d), method: :delete %>
+  <% end %>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+</p>
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
